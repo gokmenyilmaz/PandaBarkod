@@ -1,1 +1,1 @@
-copy . /root
+copy *.* ./root
