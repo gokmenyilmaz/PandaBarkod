@@ -11,13 +11,9 @@ btn.addEventListener("click", ()=>{
      alert("destek yok");
      return;
    }
-   else
-   {
-    alert("destek var");
-    return;
-   }
 
-
+    var barcodeDetector = new BarcodeDetector({formats: ['code_39', 'codabar', 'ean_13']});
+  
     barcodeDetector.detect(imageEl)
     .then(barcodes => {
       barcodes.forEach(barcode => sonucLabel.innerHTML=barcode.rawData);
@@ -34,7 +30,6 @@ function barkod_destegi_varmi()
     if (!('BarcodeDetector' in window)) {
         return false;
       } else {
-       // var barcodeDetector = new BarcodeDetector({formats: ['code_39', 'codabar', 'ean_13']});
         return true;
       }
 }
