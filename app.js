@@ -11,7 +11,6 @@ btn.addEventListener("click", ()=>{
      alert("destek yok");
      return;
    }
-
    else
    {
     alert("destek var");
