@@ -4,6 +4,15 @@ var btn=document.getElementById("btnBarkod");
 var sonucLabel=document.getElementById("lblSonuc");
 
 btn.addEventListener("click", ()=>{
+
+   let destek=barkod_destegi_varmi();
+
+   if(destek==false)
+   {
+     alert("destek yok");
+     return;
+   }
+
     barcodeDetector.detect(imageEl)
     .then(barcodes => {
       barcodes.forEach(barcode => sonucLabel.innerHTML=barcode.rawData);
@@ -14,16 +23,13 @@ btn.addEventListener("click", ()=>{
 })
 
 
-function barkodCalistir()
+function barkod_destegi_varmi()
 {
 
     if (!('BarcodeDetector' in window)) {
-     //   alert("barkod desteklenmiyor")
-        console.log('Barcode Detector is not supported by this browser.');
+        return false;
       } else {
-        console.log('Destekleniyor');
-      
-        // create new detector
         var barcodeDetector = new BarcodeDetector({formats: ['code_39', 'codabar', 'ean_13']});
+        return true;
       }
 }
