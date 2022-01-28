@@ -1,6 +1,8 @@
 
 var btn=document.getElementById("btnBarkod");
 var sonucLabel=document.getElementById("lblSonuc");
+const imageEl = document.querySelector("img");
+
 
 btn.addEventListener("click", ()=>{
 
@@ -16,7 +18,10 @@ btn.addEventListener("click", ()=>{
   
     barcodeDetector.detect(imageEl)
     .then(barcodes => {
-      barcodes.forEach(barcode => sonucLabel.innerHTML=barcode.rawData);
+
+      let pre = document.createElement("pre");
+      pre.innerHTML = JSON.stringify(barcodes, null, 2);
+      imageEl.after(pre);
     })
     .catch(err => {
       console.log(err);
