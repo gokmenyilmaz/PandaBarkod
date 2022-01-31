@@ -6,8 +6,12 @@ var lblSonuc2=document.getElementById("lblSonuc2");
 const video=document.querySelector("video");
 const canvas=document.querySelector("canvas");
 
-lblSonuc1.innerHTML=128;
+lblSonuc1.innerHTML=129;
 
+BarcodeDetector.getSupportedFormats()
+.then(supportedFormats => {
+  supportedFormats.forEach(format => alert(format));
+});
 
 btn.addEventListener("click", ()=>{
 
@@ -23,7 +27,8 @@ btn.addEventListener("click", ()=>{
     canvas.height=300;
 
     var barcodeDetector = new BarcodeDetector({formats: ['code_39', 'codabar','ean_8', 'ean_13','qr_code','upc_a','code_128']});
-  
+
+
    i=0;
     setInterval(() => {
       ctx.drawImage(video,0,0,300,300);
