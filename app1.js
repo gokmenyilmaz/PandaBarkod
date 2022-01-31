@@ -6,12 +6,12 @@ const video=document.querySelector("video");
 const canvas=document.querySelector("canvas");
 
 
-try {
-  var barcodeDetector = new BarcodeDetector({formats: ['code_39', 'codabar', 'ean_13']});
-  alert("barkod nesne oluştu");
-} catch (err) {
-  alert("nesne oluşma hatası:" + err.message);
-}
+// try {
+//   var barcodeDetector = new BarcodeDetector({formats: ['code_39', 'codabar', 'ean_13']});
+//   alert("barkod nesne oluştu");
+// } catch (err) {
+//   alert("nesne oluşma hatası:" + err.message);
+// }
 
 
 btn.addEventListener("click", ()=>{
@@ -42,7 +42,7 @@ btn.addEventListener("click", ()=>{
 
   })
   .catch(function(err) {
-    alert("strream alma hatası:" + err.message);
+    alert("stream alma hatası:" + err.message);
     
   });
 
