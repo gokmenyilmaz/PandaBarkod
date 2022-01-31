@@ -35,7 +35,7 @@ btn.addEventListener("click", ()=>{
 
       i++;
       barcodeDetector.detect(canvas)
-      .then(data => {
+      .then(([data]) => {
         lblSonuc1.innerHTML=i;
 
         if(data) lblSonuc2.innerHTML=data.rawValue;
