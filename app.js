@@ -15,14 +15,6 @@ btn.addEventListener("click", ()=>{
     video.srcObject =stream;
     video.play();
 
-
-    // if (!('BarcodeDetector' in window)) {
-    //   alert('Barcode Detector is not supported by this browser.');
-    // } else {
-    //   alert('Barcode Detector supported!');
-    //   var barcodeDetector = new BarcodeDetector({formats: ['code_39', 'codabar', 'ean_13']});
-    // }
-
     const ctx=canvas.getContext('2d');
     canvas.width=200;
     canvas.height=200;
@@ -30,13 +22,14 @@ btn.addEventListener("click", ()=>{
     setInterval(() => {
       ctx.drawImage(video,0,0,200,200);
 
-      // barcodeDetector.detect(canvas)
-      // .then(data => {
-      //   if(data) alert(data);
-      // })
-      // .catch(err => {
-      //   alert(err.message);
-      // })
+      var barcodeDetector = new BarcodeDetector({formats: ['code_39', 'codabar', 'ean_13']});
+      barcodeDetector.detect(canvas)
+      .then(data => {
+        if(data) alert(data);
+      })
+      .catch(err => {
+        alert("hata:",err.message);
+      })
 
     }, 100);
 
