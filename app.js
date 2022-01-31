@@ -15,13 +15,24 @@ btn.addEventListener("click", ()=>{
     video.srcObject =stream;
     video.play();
 
-    const ctx=canvas.getContext('2d');
 
-    canvas.width=video.videoWidth;
-    canvas.height=video.videoHeight;
+    var barcodeDetector = new window.BarcodeDetector({formats: ['code_39', 'codabar', 'ean_13']});
+
+    const ctx=canvas.getContext('2d');
+    canvas.width=200;
+    canvas.height=200;
 
     setInterval(() => {
-      ctx.drawImage(video,0,0,video.videoWidth,video.videoHeight);
+      ctx.drawImage(video,0,0,200,200);
+
+      barcodeDetector.detect(canvas)
+      .then(data => {
+        if(data) alert(data);
+      })
+      .catch(err => {
+        alert.log(err.message);
+      })
+
     }, 100);
 
   })
