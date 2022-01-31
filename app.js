@@ -9,6 +9,7 @@ btn.addEventListener("click", ()=>{
   const constraint={video: {width:100, height:200}}
   navigator.mediaDevices.getUserMedia(constraint)
   .then(function(stream) {
+    alert("video açılıyor");
    
   })
   .catch(function(err) {
