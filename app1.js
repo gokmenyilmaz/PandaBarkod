@@ -22,7 +22,7 @@ btn.addEventListener("click", ()=>{
     canvas.width=300;
     canvas.height=300;
 
-    var barcodeDetector = new BarcodeDetector({formats: ['code_39', 'codabar', 'ean_13']});
+    var barcodeDetector = new BarcodeDetector({formats: ['code_39', 'codabar', 'ean_13','qr_code']});
   
    i=0;
     setInterval(() => {
