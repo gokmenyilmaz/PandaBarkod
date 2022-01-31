@@ -32,7 +32,6 @@ btn.addEventListener("click", ()=>{
 
       barcodeDetector.detect(canvas)
       .then(data => {
-        alert("okudu");
         if(data) alert(data.toString());
       })
       .catch(err => {
