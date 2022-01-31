@@ -32,7 +32,7 @@ btn.addEventListener("click", ()=>{
 
       barcodeDetector.detect(canvas)
       .then(data => {
-        if(data) alert(data.toString());
+        if(data) alert("gelen data:" + data.toString());
       })
       .catch(err => {
         alert("hata:",err.message);
