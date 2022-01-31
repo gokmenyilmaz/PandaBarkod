@@ -1,0 +1,22 @@
+{
+  "name": "pandabarkod",
+  "version": "1.0.0",
+  "description": "copy *.* ./root",
+  "main": "app.js",
+  "scripts": {
+    "deploy":"npm run clean & xcopy *.* .\\root & npm run push",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean":"del /s /q  .\\root\\*.*",
+    "push":"git push"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gokmenyilmaz/PandaBarkod.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gokmenyilmaz/PandaBarkod/issues"
+  },
+  "homepage": "https://github.com/gokmenyilmaz/PandaBarkod#readme"
+}
