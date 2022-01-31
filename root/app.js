@@ -16,6 +16,7 @@ btn.addEventListener("click", ()=>{
    
   })
   .catch(function(err) {
+    alert(err);
     
   });
 
