@@ -12,7 +12,11 @@ btn.addEventListener("click", ()=>{
   .then(function(stream) {
    
     video.srcObject =stream;
-    video.play();
+
+    video.onloadedmetadata = function(e) {
+      video.play();
+    };
+   
    
   })
   .catch(function(err) {
