@@ -22,8 +22,8 @@ btn.addEventListener("click", ()=>{
     try {
       var barcodeDetector = new BarcodeDetector({formats: ['code_39', 'codabar', 'ean_13']});
       alert("barkod nesne oluştu");
-    } catch (error) {
-      alert(error.message);
+    } catch (err) {
+      alert("nesne oluşma hatası:" + err.message);
     }
   
 
@@ -42,7 +42,7 @@ btn.addEventListener("click", ()=>{
 
   })
   .catch(function(err) {
-    alert(err.message);
+    alert("strream alma hatası:" + err.message);
     
   });
 
