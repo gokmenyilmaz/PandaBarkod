@@ -16,7 +16,12 @@ btn.addEventListener("click", ()=>{
     video.play();
 
 
-    var barcodeDetector = new BarcodeDetector({formats: ['code_39', 'codabar', 'ean_13']});
+    if (!('BarcodeDetector' in window)) {
+      alert('Barcode Detector is not supported by this browser.');
+    } else {
+      alert('Barcode Detector supported!');
+      var barcodeDetector = new BarcodeDetector({formats: ['code_39', 'codabar', 'ean_13']});
+    }
 
     const ctx=canvas.getContext('2d');
     canvas.width=200;
