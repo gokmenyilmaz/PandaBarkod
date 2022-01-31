@@ -6,7 +6,7 @@ var lblSonuc2=document.getElementById("lblSonuc2");
 const video=document.querySelector("video");
 const canvas=document.querySelector("canvas");
 
-lblSonuc1.innerHTML=12;
+lblSonuc1.innerHTML=15;
 
 
 btn.addEventListener("click", ()=>{
@@ -32,7 +32,7 @@ btn.addEventListener("click", ()=>{
       barcodeDetector.detect(canvas)
       .then(data => {
         lblSonuc1.innerHTML=i;
-        lblSonuc2.innerHTML=data;
+        lblSonuc2.innerHTML=data.rawValue;
       })
       .catch(err => {
         alert("hata:",err.message);
