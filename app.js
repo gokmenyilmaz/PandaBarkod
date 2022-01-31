@@ -13,19 +13,16 @@ btn.addEventListener("click", ()=>{
   .then(function(stream) {
    
     video.srcObject =stream;
+    video.play();
 
+    const ctx=canvas.getContext('2d');
 
-      video.play();
+    canvas.width=video.videoWidth;
+    canvas.height=video.videoHeight;
 
-      const ctx=canvas.getContext('2d');
-
-      canvas.width=video.width;
-      canvas.height=video.height;
-
-      setInterval(() => {
-        ctx.drawImage(video,0,0,video.videoWidth,video.videoHeight);
-        
-      }, 100);
+    setInterval(() => {
+      ctx.drawImage(video,0,0,video.videoWidth,video.videoHeight);
+    }, 100);
 
   })
   .catch(function(err) {
