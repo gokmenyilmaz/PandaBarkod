@@ -30,7 +30,7 @@ btn.addEventListener("click", ()=>{
         if(data) alert(data);
       })
       .catch(err => {
-        alert.log(err.message);
+        alert(err.message);
       })
 
     }, 100);
