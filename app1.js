@@ -6,7 +6,7 @@ var lblSonuc2=document.getElementById("lblSonuc2");
 const video=document.querySelector("video");
 const canvas=document.querySelector("canvas");
 
-lblSonuc1.innerHTML=15;
+lblSonuc1.innerHTML=128;
 
 
 btn.addEventListener("click", ()=>{
@@ -22,7 +22,7 @@ btn.addEventListener("click", ()=>{
     canvas.width=300;
     canvas.height=300;
 
-    var barcodeDetector = new BarcodeDetector({formats: ['code_39', 'codabar', 'ean_13','qr_code']});
+    var barcodeDetector = new BarcodeDetector({formats: ['code_39', 'codabar','ean_8', 'ean_13','qr_code','upc_a','code_128']});
   
    i=0;
     setInterval(() => {
@@ -32,7 +32,8 @@ btn.addEventListener("click", ()=>{
       barcodeDetector.detect(canvas)
       .then(data => {
         lblSonuc1.innerHTML=i;
-        lblSonuc2.innerHTML=data.rawValue;
+
+        if(data) lblSonuc2.innerHTML=data.rawValue;
       })
       .catch(err => {
         alert("hata:",err.message);
