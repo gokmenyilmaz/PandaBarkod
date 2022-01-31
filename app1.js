@@ -1,7 +1,7 @@
 
 var btn=document.getElementById("btnBarkod");
-var sonucLabel=document.getElementById("lblSonuc");
-const imageEl = document.querySelector("img");
+var lblSonuc=document.getElementById("lblSonuc");
+
 const video=document.querySelector("video");
 const canvas=document.querySelector("canvas");
 
@@ -30,7 +30,7 @@ btn.addEventListener("click", ()=>{
 
       barcodeDetector.detect(canvas)
       .then(data => {
-        if(data) alert("gelen data:" + data.toString());
+        lblSonuc.innerHTML=data;
       })
       .catch(err => {
         alert("hata:",err.message);
