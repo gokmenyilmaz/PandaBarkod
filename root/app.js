@@ -16,7 +16,7 @@ btn.addEventListener("click", ()=>{
     video.play();
 
 
-    var barcodeDetector = new window.BarcodeDetector({formats: ['code_39', 'codabar', 'ean_13']});
+    var barcodeDetector = new BarcodeDetector({formats: ['code_39', 'codabar', 'ean_13']});
 
     const ctx=canvas.getContext('2d');
     canvas.width=200;
