@@ -7,7 +7,7 @@ const video=document.querySelector("video");
 
 btn.addEventListener("click", ()=>{
 
-  const constraint={video: {width:200, height:200}}
+  const constraint={video: {width:200, height:200, facingMode: 'environment'}}
   navigator.mediaDevices.getUserMedia(constraint)
   .then(function(stream) {
    
