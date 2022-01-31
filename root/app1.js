@@ -33,7 +33,14 @@ btn.addEventListener("click", ()=>{
       .then(([data]) => {
         lblSonuc1.innerHTML=i;
 
-        if(data) lblSonuc2.innerHTML=data.rawValue;
+        if(data){
+          lblSonuc2.innerHTML=data.rawValue;
+          navigator.vibrate(200); 
+
+          i=0;
+        } 
+
+
       })
       .catch(err => {
         alert("hata:",err.message);
