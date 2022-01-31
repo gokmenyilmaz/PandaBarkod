@@ -30,13 +30,13 @@ btn.addEventListener("click", ()=>{
     setInterval(() => {
       ctx.drawImage(video,0,0,200,200);
 
-      barcodeDetector.detect(canvas)
-      .then(data => {
-        if(data) alert(data);
-      })
-      .catch(err => {
-        alert(err.message);
-      })
+      // barcodeDetector.detect(canvas)
+      // .then(data => {
+      //   if(data) alert(data);
+      // })
+      // .catch(err => {
+      //   alert(err.message);
+      // })
 
     }, 100);
 
