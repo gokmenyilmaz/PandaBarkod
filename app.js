@@ -14,7 +14,7 @@ btn.addEventListener("click", ()=>{
    
     video.srcObject =stream;
 
-    video.onloadedmetadata = function(e) {
+
       video.play();
 
       const ctx=canvas.getContext('2d');
@@ -23,13 +23,10 @@ btn.addEventListener("click", ()=>{
       canvas.height=video.height;
 
       setInterval(() => {
-        ctx.drawImage(video,0,0,ctx.width,ctx.height);
+        ctx.drawImage(video,0,0,video.videoWidth,video.videoHeight);
         
       }, 100);
 
-    };
-   
-   
   })
   .catch(function(err) {
     alert(err.message);
