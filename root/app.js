@@ -20,7 +20,7 @@ btn.addEventListener("click", ()=>{
    
   })
   .catch(function(err) {
-    alert(err);
+    alert(err.message);
     
   });
 
