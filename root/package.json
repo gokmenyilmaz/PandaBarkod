@@ -7,9 +7,8 @@
     "deploy":"npm run clean & xcopy *.* .\\root & npm run commit & npm run push",
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean":"del /s /q  .\\root\\*.*",
-
-    "commit":"git commit .",
-    "push":"git push"
+    "push":"git push",
+    "commit":"git add -A && git commit -m 'deploy1'"
   },
   "repository": {
     "type": "git",

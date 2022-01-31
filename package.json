@@ -4,10 +4,11 @@
   "description": "copy *.* ./root",
   "main": "app.js",
   "scripts": {
-    "deploy":"npm run clean & xcopy *.* .\\root & npm run push",
+    "deploy":"npm run clean & xcopy *.* .\\root & npm run commit & npm run push",
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean":"del /s /q  .\\root\\*.*",
-    "push":"git add -A && git commit -m 'deploy1'"
+    "push":"git push",
+    "commit":"git add -A && git commit -m 'deploy1'"
   },
   "repository": {
     "type": "git",
