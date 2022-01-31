@@ -6,6 +6,14 @@ const video=document.querySelector("video");
 const canvas=document.querySelector("canvas");
 
 
+try {
+  var barcodeDetector = new BarcodeDetector({formats: ['code_39', 'codabar', 'ean_13']});
+  alert("barkod nesne oluştu");
+} catch (err) {
+  alert("nesne oluşma hatası:" + err.message);
+}
+
+
 btn.addEventListener("click", ()=>{
 
   const constraint={video: {width:400, height:400, facingMode: 'environment'}}
@@ -19,24 +27,16 @@ btn.addEventListener("click", ()=>{
     canvas.width=400;
     canvas.height=400;
 
-    try {
-      var barcodeDetector = new BarcodeDetector({formats: ['code_39', 'codabar', 'ean_13']});
-      alert("barkod nesne oluştu");
-    } catch (err) {
-      alert("nesne oluşma hatası:" + err.message);
-    }
-  
-
     setInterval(() => {
       ctx.drawImage(video,0,0,400,400);
 
-      barcodeDetector.detect(canvas)
-      .then(data => {
-        if(data) alert("gelen data:" + data.toString());
-      })
-      .catch(err => {
-        alert("hata:",err.message);
-      })
+      // barcodeDetector.detect(canvas)
+      // .then(data => {
+      //   if(data) alert("gelen data:" + data.toString());
+      // })
+      // .catch(err => {
+      //   alert("hata:",err.message);
+      // })
 
     }, 100);
 
