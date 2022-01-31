@@ -1,11 +1,12 @@
 
 var btn=document.getElementById("btnBarkod");
-var lblSonuc=document.getElementById("lblSonuc");
+var lblSonuc1=document.getElementById("lblSonuc1");
+var lblSonuc2=document.getElementById("lblSonuc2");
 
 const video=document.querySelector("video");
 const canvas=document.querySelector("canvas");
 
-lblSonuc.innerHTML=10;
+lblSonuc1.innerHTML=11;
 
 
 btn.addEventListener("click", ()=>{
@@ -30,7 +31,8 @@ btn.addEventListener("click", ()=>{
       i++;
       barcodeDetector.detect(canvas)
       .then(data => {
-        lblSonuc.innerHTML=i;
+        lblSonuc1.innerHTML=i;
+        lblSonuc2.innerHTML=data;
       })
       .catch(err => {
         alert("hata:",err.message);
