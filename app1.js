@@ -6,12 +6,7 @@ var lblSonuc2=document.getElementById("lblSonuc2");
 const video=document.querySelector("video");
 const canvas=document.querySelector("canvas");
 
-lblSonuc1.innerHTML=130;
-
-BarcodeDetector.getSupportedFormats()
-.then(supportedFormats => {
-  supportedFormats.forEach(format => alert(format));
-});
+lblSonuc1.innerHTML=150;
 
 btn.addEventListener("click", ()=>{
 
