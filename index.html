@@ -1,37 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Cache-Control"
+      content="no-cache, no-store, must-revalidate"
+    />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
     <title>Pandap Barkod</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <div>
-        <input type="button" style="height: 50px;" value="Depo Barkod Okut (z6)" id="btnBarkod"/>
+      <input
+        type="button"
+        style="height: 50px"
+        value="Depo Barkod Okut (z6)"
+        id="btnBarkod"
+      />
 
-        <h2 style="background: yellow;" id="lblSonuc1">say</h2>
-        <h2 style="background: green;" id="lblSonuc2">sonuc</h2>
+      <h2 style="background: yellow" id="lblSonuc1">say</h2>
+      <h2 style="background: green" id="lblSonuc2">sonuc</h2>
 
-        <h1>Video</h1>
-        <video muted hidden></video>
+      <h1>Video</h1>
+      <video muted hidden></video>
 
-        <h1>Canvas</h1>
+      <h1>Canvas</h1>
 
-        <div style="background: gray;">
-            <canvas></canvas>
-        </div>
-      
+      <div style="background: gray">
+        <canvas></canvas>
+      </div>
 
-        <script src="app1.js?v=6"></script>
-
+      <script type="text/javascript">
+        let random = Math.random()
+          .toString(36)
+          .replace(/[^a-z]+/g, "")
+          .substr(0, 5);
+          
+        document.write(
+          '<script src="app1.js?' +
+            Math.random() +
+            '" type="text/javascript"></scr' +
+            "ipt>"
+        );
+      </script>
     </div>
-
-
-    
-</body>
+  </body>
 </html>
