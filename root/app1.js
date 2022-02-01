@@ -6,7 +6,7 @@ var lblSonuc2=document.getElementById("lblSonuc2");
 const video=document.querySelector("video");
 const canvas=document.querySelector("canvas");
 
-lblSonuc1.innerHTML=151;
+lblSonuc1.innerHTML=155;
 
 btn.addEventListener("click", ()=>{
 
