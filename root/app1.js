@@ -10,7 +10,7 @@ const canvas=document.querySelector("canvas");
 let random=Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5)
 window.history.replaceState(null, null, `?arg=${random}`);
 
-lblSonuc1.innerHTML=179;
+lblSonuc1.innerHTML=1000;
 
 btn.addEventListener("click", ()=>{
 
