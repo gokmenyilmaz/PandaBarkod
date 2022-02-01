@@ -6,6 +6,10 @@ var lblSonuc2=document.getElementById("lblSonuc2");
 const video=document.querySelector("video");
 const canvas=document.querySelector("canvas");
 
+
+let random=Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5)
+window.history.replaceState(null, null, `?arg=${random}`);
+
 lblSonuc1.innerHTML=155;
 
 btn.addEventListener("click", ()=>{
